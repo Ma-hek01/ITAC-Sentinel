@@ -1,0 +1,483 @@
+test_id,control_area,record_id,test_name,expected_result,actual_result,test_status,risk_severity,remediation_status
+AC-01,Access,U001,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Active; Privileged=Yes,Pass,,Not Required
+AC-01,Access,U002,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Active; Privileged=Yes,Pass,,Not Required
+AC-01,Access,U003,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Active; Privileged=Yes,Pass,,Not Required
+AC-01,Access,U004,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Active; Privileged=No,Pass,,Not Required
+AC-01,Access,U005,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Inactive; Privileged=Yes,Fail,High,Open
+AC-01,Access,U006,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Active; Privileged=No,Pass,,Not Required
+AC-01,Access,U007,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Active; Privileged=No,Pass,,Not Required
+AC-01,Access,U008,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Active; Privileged=No,Pass,,Not Required
+AC-01,Access,U009,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Active; Privileged=No,Pass,,Not Required
+AC-01,Access,U010,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Active; Privileged=No,Pass,,Not Required
+AC-01,Access,U011,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Active; Privileged=No,Pass,,Not Required
+AC-01,Access,U012,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Inactive; Privileged=No,Pass,,Not Required
+AC-01,Access,U013,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Active; Privileged=No,Pass,,Not Required
+AC-01,Access,U014,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Active; Privileged=No,Pass,,Not Required
+AC-01,Access,U015,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Active; Privileged=No,Pass,,Not Required
+AC-01,Access,U016,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Active; Privileged=No,Pass,,Not Required
+AC-01,Access,U017,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Active; Privileged=No,Pass,,Not Required
+AC-01,Access,U018,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Active; Privileged=No,Pass,,Not Required
+AC-01,Access,U019,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Active; Privileged=No,Pass,,Not Required
+AC-01,Access,U020,Inactive user retains privileged access,Inactive users must not retain privileged access,Status=Active; Privileged=No,Pass,,Not Required
+AC-02,Access,T0001,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U020; Active=True,Pass,,Not Required
+AP-01,Approval,T0001,High-value transaction approval,Amount above 50000 must have Approved status,Amount=60000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0001,Maker-checker separation,Initiator and approver must be different users,Initiator=U020; Approver=U011,Pass,,Not Required
+AP-03,Approval,T0001,Approver is active and exists,Approver must exist and be active,Approver=U011; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0001,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=60000.00,Fail,Medium,Open
+AC-02,Access,T0002,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U014; Active=True,Pass,,Not Required
+AP-01,Approval,T0002,High-value transaction approval,Amount above 50000 must have Approved status,Amount=45000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0002,Maker-checker separation,Initiator and approver must be different users,Initiator=U014; Approver=U008,Pass,,Not Required
+AP-03,Approval,T0002,Approver is active and exists,Approver must exist and be active,Approver=U008; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0002,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=45000.00,Pass,,Not Required
+AC-02,Access,T0003,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U009; Active=True,Pass,,Not Required
+AP-01,Approval,T0003,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Pending,Pass,,Not Required
+TL-01,Transaction Limit,T0003,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0004,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U004; Active=True,Pass,,Not Required
+AP-01,Approval,T0004,High-value transaction approval,Amount above 50000 must have Approved status,Amount=12000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0004,Maker-checker separation,Initiator and approver must be different users,Initiator=U004; Approver=U015,Pass,,Not Required
+AP-03,Approval,T0004,Approver is active and exists,Approver must exist and be active,Approver=U015; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0004,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=12000.00,Fail,Medium,Open
+AC-02,Access,T0005,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U005; Active=False,Fail,High,Open
+AP-01,Approval,T0005,High-value transaction approval,Amount above 50000 must have Approved status,Amount=20000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0005,Maker-checker separation,Initiator and approver must be different users,Initiator=U005; Approver=U001,Pass,,Not Required
+AP-03,Approval,T0005,Approver is active and exists,Approver must exist and be active,Approver=U001; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0005,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=20000.00,Pass,,Not Required
+AC-02,Access,T0006,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U010; Active=True,Pass,,Not Required
+AP-01,Approval,T0006,High-value transaction approval,Amount above 50000 must have Approved status,Amount=30000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0006,Maker-checker separation,Initiator and approver must be different users,Initiator=U010; Approver=U003,Pass,,Not Required
+AP-03,Approval,T0006,Approver is active and exists,Approver must exist and be active,Approver=U003; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0006,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=30000.00,Pass,,Not Required
+AC-02,Access,T0007,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U020; Active=True,Pass,,Not Required
+AP-01,Approval,T0007,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0007,Maker-checker separation,Initiator and approver must be different users,Initiator=U020; Approver=U009,Pass,,Not Required
+AP-03,Approval,T0007,Approver is active and exists,Approver must exist and be active,Approver=U009; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0007,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0008,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U010; Active=True,Pass,,Not Required
+AP-01,Approval,T0008,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0008,Maker-checker separation,Initiator and approver must be different users,Initiator=U010; Approver=U020,Pass,,Not Required
+AP-03,Approval,T0008,Approver is active and exists,Approver must exist and be active,Approver=U020; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0008,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0009,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U002; Active=True,Pass,,Not Required
+AP-01,Approval,T0009,High-value transaction approval,Amount above 50000 must have Approved status,Amount=60000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0009,Maker-checker separation,Initiator and approver must be different users,Initiator=U002; Approver=U009,Pass,,Not Required
+AP-03,Approval,T0009,Approver is active and exists,Approver must exist and be active,Approver=U009; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0009,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=60000.00,Fail,Medium,Open
+AC-02,Access,T0010,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U002; Active=True,Pass,,Not Required
+AP-01,Approval,T0010,High-value transaction approval,Amount above 50000 must have Approved status,Amount=60000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0010,Maker-checker separation,Initiator and approver must be different users,Initiator=U002; Approver=U002,Fail,High,Open
+AP-03,Approval,T0010,Approver is active and exists,Approver must exist and be active,Approver=U002; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0010,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=60000.00,Fail,Medium,Open
+AC-02,Access,T0011,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U013; Active=True,Pass,,Not Required
+AP-01,Approval,T0011,High-value transaction approval,Amount above 50000 must have Approved status,Amount=45000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0011,Maker-checker separation,Initiator and approver must be different users,Initiator=U013; Approver=U008,Pass,,Not Required
+AP-03,Approval,T0011,Approver is active and exists,Approver must exist and be active,Approver=U008; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0011,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=45000.00,Fail,Medium,Open
+AC-02,Access,T0012,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U017; Active=True,Pass,,Not Required
+AP-01,Approval,T0012,High-value transaction approval,Amount above 50000 must have Approved status,Amount=12000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0012,Maker-checker separation,Initiator and approver must be different users,Initiator=U017; Approver=U006,Pass,,Not Required
+AP-03,Approval,T0012,Approver is active and exists,Approver must exist and be active,Approver=U006; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0012,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=12000.00,Pass,,Not Required
+AC-02,Access,T0013,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U020; Active=True,Pass,,Not Required
+AP-01,Approval,T0013,High-value transaction approval,Amount above 50000 must have Approved status,Amount=12000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0013,Maker-checker separation,Initiator and approver must be different users,Initiator=U020; Approver=U020,Fail,High,Open
+AP-03,Approval,T0013,Approver is active and exists,Approver must exist and be active,Approver=U020; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0013,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=12000.00,Fail,Medium,Open
+AC-02,Access,T0014,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U016; Active=True,Pass,,Not Required
+AP-01,Approval,T0014,High-value transaction approval,Amount above 50000 must have Approved status,Amount=12000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0014,Maker-checker separation,Initiator and approver must be different users,Initiator=U016; Approver=U015,Pass,,Not Required
+AP-03,Approval,T0014,Approver is active and exists,Approver must exist and be active,Approver=U015; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0014,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=12000.00,Fail,Medium,Open
+AC-02,Access,T0015,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U003; Active=True,Pass,,Not Required
+AP-01,Approval,T0015,High-value transaction approval,Amount above 50000 must have Approved status,Amount=70000.00; Status=Pending,Fail,High,Open
+TL-01,Transaction Limit,T0015,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=70000.00,Fail,Medium,Open
+AC-02,Access,T0016,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U002; Active=True,Pass,,Not Required
+AP-01,Approval,T0016,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0016,Maker-checker separation,Initiator and approver must be different users,Initiator=U002; Approver=U004,Pass,,Not Required
+AP-03,Approval,T0016,Approver is active and exists,Approver must exist and be active,Approver=U004; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0016,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0017,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U016; Active=True,Pass,,Not Required
+AP-01,Approval,T0017,High-value transaction approval,Amount above 50000 must have Approved status,Amount=18000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0017,Maker-checker separation,Initiator and approver must be different users,Initiator=U016; Approver=U003,Pass,,Not Required
+AP-03,Approval,T0017,Approver is active and exists,Approver must exist and be active,Approver=U003; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0017,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=18000.00,Fail,Medium,Open
+AC-02,Access,T0018,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U017; Active=True,Pass,,Not Required
+AP-01,Approval,T0018,High-value transaction approval,Amount above 50000 must have Approved status,Amount=12000.00; Status=Rejected,Pass,,Not Required
+TL-01,Transaction Limit,T0018,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=12000.00,Pass,,Not Required
+AC-02,Access,T0019,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U001; Active=True,Pass,,Not Required
+AP-01,Approval,T0019,High-value transaction approval,Amount above 50000 must have Approved status,Amount=45000.00; Status=Pending,Pass,,Not Required
+TL-01,Transaction Limit,T0019,Transaction within configured user limit,Amount must not exceed limit 75000,Amount=45000.00,Pass,,Not Required
+AC-02,Access,T0020,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U004; Active=True,Pass,,Not Required
+AP-01,Approval,T0020,High-value transaction approval,Amount above 50000 must have Approved status,Amount=120000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0020,Maker-checker separation,Initiator and approver must be different users,Initiator=U004; Approver=U001,Pass,,Not Required
+AP-03,Approval,T0020,Approver is active and exists,Approver must exist and be active,Approver=U001; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0020,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=120000.00,Fail,Medium,Open
+AC-02,Access,T0021,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U007; Active=True,Pass,,Not Required
+AP-01,Approval,T0021,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Rejected,Pass,,Not Required
+TL-01,Transaction Limit,T0021,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0022,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U010; Active=True,Pass,,Not Required
+AP-01,Approval,T0022,High-value transaction approval,Amount above 50000 must have Approved status,Amount=60000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0022,Maker-checker separation,Initiator and approver must be different users,Initiator=U010; Approver=U019,Pass,,Not Required
+AP-03,Approval,T0022,Approver is active and exists,Approver must exist and be active,Approver=U019; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0022,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=60000.00,Fail,Medium,Open
+AC-02,Access,T0023,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U004; Active=True,Pass,,Not Required
+AP-01,Approval,T0023,High-value transaction approval,Amount above 50000 must have Approved status,Amount=60000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0023,Maker-checker separation,Initiator and approver must be different users,Initiator=U004; Approver=U011,Pass,,Not Required
+AP-03,Approval,T0023,Approver is active and exists,Approver must exist and be active,Approver=U011; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0023,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=60000.00,Fail,Medium,Open
+AC-02,Access,T0024,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U008; Active=True,Pass,,Not Required
+AP-01,Approval,T0024,High-value transaction approval,Amount above 50000 must have Approved status,Amount=12000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0024,Maker-checker separation,Initiator and approver must be different users,Initiator=U008; Approver=U006,Pass,,Not Required
+AP-03,Approval,T0024,Approver is active and exists,Approver must exist and be active,Approver=U006; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0024,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=12000.00,Pass,,Not Required
+AC-02,Access,T0025,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U012; Active=False,Fail,High,Open
+AP-01,Approval,T0025,High-value transaction approval,Amount above 50000 must have Approved status,Amount=10000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0025,Maker-checker separation,Initiator and approver must be different users,Initiator=U012; Approver=U001,Pass,,Not Required
+AP-03,Approval,T0025,Approver is active and exists,Approver must exist and be active,Approver=U001; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0025,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=10000.00,Pass,,Not Required
+AC-02,Access,T0026,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U018; Active=True,Pass,,Not Required
+AP-01,Approval,T0026,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Pending,Pass,,Not Required
+TL-01,Transaction Limit,T0026,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0027,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U011; Active=True,Pass,,Not Required
+AP-01,Approval,T0027,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0027,Maker-checker separation,Initiator and approver must be different users,Initiator=U011; Approver=U009,Pass,,Not Required
+AP-03,Approval,T0027,Approver is active and exists,Approver must exist and be active,Approver=U009; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0027,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0028,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U003; Active=True,Pass,,Not Required
+AP-01,Approval,T0028,High-value transaction approval,Amount above 50000 must have Approved status,Amount=45000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0028,Maker-checker separation,Initiator and approver must be different users,Initiator=U003; Approver=U003,Fail,High,Open
+AP-03,Approval,T0028,Approver is active and exists,Approver must exist and be active,Approver=U003; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0028,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=45000.00,Fail,Medium,Open
+AC-02,Access,T0029,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U003; Active=True,Pass,,Not Required
+AP-01,Approval,T0029,High-value transaction approval,Amount above 50000 must have Approved status,Amount=60000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0029,Maker-checker separation,Initiator and approver must be different users,Initiator=U003; Approver=U020,Pass,,Not Required
+AP-03,Approval,T0029,Approver is active and exists,Approver must exist and be active,Approver=U020; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0029,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=60000.00,Fail,Medium,Open
+AC-02,Access,T0030,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U018; Active=True,Pass,,Not Required
+AP-01,Approval,T0030,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0030,Maker-checker separation,Initiator and approver must be different users,Initiator=U018; Approver=U020,Pass,,Not Required
+AP-03,Approval,T0030,Approver is active and exists,Approver must exist and be active,Approver=U020; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0030,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0031,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U016; Active=True,Pass,,Not Required
+AP-01,Approval,T0031,High-value transaction approval,Amount above 50000 must have Approved status,Amount=30000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0031,Maker-checker separation,Initiator and approver must be different users,Initiator=U016; Approver=U008,Pass,,Not Required
+AP-03,Approval,T0031,Approver is active and exists,Approver must exist and be active,Approver=U008; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0031,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=30000.00,Fail,Medium,Open
+AC-02,Access,T0032,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U008; Active=True,Pass,,Not Required
+AP-01,Approval,T0032,High-value transaction approval,Amount above 50000 must have Approved status,Amount=18000.00; Status=Rejected,Pass,,Not Required
+TL-01,Transaction Limit,T0032,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=18000.00,Pass,,Not Required
+AC-02,Access,T0033,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U014; Active=True,Pass,,Not Required
+AP-01,Approval,T0033,High-value transaction approval,Amount above 50000 must have Approved status,Amount=30000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0033,Maker-checker separation,Initiator and approver must be different users,Initiator=U014; Approver=U017,Pass,,Not Required
+AP-03,Approval,T0033,Approver is active and exists,Approver must exist and be active,Approver=U017; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0033,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=30000.00,Pass,,Not Required
+AC-02,Access,T0034,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U009; Active=True,Pass,,Not Required
+AP-01,Approval,T0034,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0034,Maker-checker separation,Initiator and approver must be different users,Initiator=U009; Approver=U009,Fail,High,Open
+AP-03,Approval,T0034,Approver is active and exists,Approver must exist and be active,Approver=U009; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0034,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0035,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U020; Active=True,Pass,,Not Required
+AP-01,Approval,T0035,High-value transaction approval,Amount above 50000 must have Approved status,Amount=30000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0035,Maker-checker separation,Initiator and approver must be different users,Initiator=U020; Approver=U009,Pass,,Not Required
+AP-03,Approval,T0035,Approver is active and exists,Approver must exist and be active,Approver=U009; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0035,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=30000.00,Fail,Medium,Open
+AC-02,Access,T0036,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U003; Active=True,Pass,,Not Required
+AP-01,Approval,T0036,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0036,Maker-checker separation,Initiator and approver must be different users,Initiator=U003; Approver=U002,Pass,,Not Required
+AP-03,Approval,T0036,Approver is active and exists,Approver must exist and be active,Approver=U002; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0036,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0037,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U002; Active=True,Pass,,Not Required
+AP-01,Approval,T0037,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0037,Maker-checker separation,Initiator and approver must be different users,Initiator=U002; Approver=U013,Pass,,Not Required
+AP-03,Approval,T0037,Approver is active and exists,Approver must exist and be active,Approver=U013; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0037,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0038,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U010; Active=True,Pass,,Not Required
+AP-01,Approval,T0038,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0038,Maker-checker separation,Initiator and approver must be different users,Initiator=U010; Approver=U018,Pass,,Not Required
+AP-03,Approval,T0038,Approver is active and exists,Approver must exist and be active,Approver=U018; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0038,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0039,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U018; Active=True,Pass,,Not Required
+AP-01,Approval,T0039,High-value transaction approval,Amount above 50000 must have Approved status,Amount=60000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0039,Maker-checker separation,Initiator and approver must be different users,Initiator=U018; Approver=U009,Pass,,Not Required
+AP-03,Approval,T0039,Approver is active and exists,Approver must exist and be active,Approver=U009; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0039,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=60000.00,Fail,Medium,Open
+AC-02,Access,T0040,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U016; Active=True,Pass,,Not Required
+AP-01,Approval,T0040,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0040,Maker-checker separation,Initiator and approver must be different users,Initiator=U016; Approver=U008,Pass,,Not Required
+AP-03,Approval,T0040,Approver is active and exists,Approver must exist and be active,Approver=U008; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0040,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0041,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U016; Active=True,Pass,,Not Required
+AP-01,Approval,T0041,High-value transaction approval,Amount above 50000 must have Approved status,Amount=18000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0041,Maker-checker separation,Initiator and approver must be different users,Initiator=U016; Approver=U014,Pass,,Not Required
+AP-03,Approval,T0041,Approver is active and exists,Approver must exist and be active,Approver=U014; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0041,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=18000.00,Fail,Medium,Open
+AC-02,Access,T0042,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U002; Active=True,Pass,,Not Required
+AP-01,Approval,T0042,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0042,Maker-checker separation,Initiator and approver must be different users,Initiator=U002; Approver=U004,Pass,,Not Required
+AP-03,Approval,T0042,Approver is active and exists,Approver must exist and be active,Approver=U004; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0042,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0043,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U013; Active=True,Pass,,Not Required
+AP-01,Approval,T0043,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0043,Maker-checker separation,Initiator and approver must be different users,Initiator=U013; Approver=U004,Pass,,Not Required
+AP-03,Approval,T0043,Approver is active and exists,Approver must exist and be active,Approver=U004; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0043,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0044,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U020; Active=True,Pass,,Not Required
+AP-01,Approval,T0044,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0044,Maker-checker separation,Initiator and approver must be different users,Initiator=U020; Approver=U017,Pass,,Not Required
+AP-03,Approval,T0044,Approver is active and exists,Approver must exist and be active,Approver=U017; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0044,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0045,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U010; Active=True,Pass,,Not Required
+AP-01,Approval,T0045,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Pending,Pass,,Not Required
+TL-01,Transaction Limit,T0045,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0046,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U003; Active=True,Pass,,Not Required
+AP-01,Approval,T0046,High-value transaction approval,Amount above 50000 must have Approved status,Amount=60000.00; Status=Pending,Fail,High,Open
+TL-01,Transaction Limit,T0046,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=60000.00,Fail,Medium,Open
+AC-02,Access,T0047,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U020; Active=True,Pass,,Not Required
+AP-01,Approval,T0047,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0047,Maker-checker separation,Initiator and approver must be different users,Initiator=U020; Approver=U004,Pass,,Not Required
+AP-03,Approval,T0047,Approver is active and exists,Approver must exist and be active,Approver=U004; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0047,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0048,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U020; Active=True,Pass,,Not Required
+AP-01,Approval,T0048,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Pending,Pass,,Not Required
+TL-01,Transaction Limit,T0048,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0049,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U009; Active=True,Pass,,Not Required
+AP-01,Approval,T0049,High-value transaction approval,Amount above 50000 must have Approved status,Amount=18000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0049,Maker-checker separation,Initiator and approver must be different users,Initiator=U009; Approver=U007,Pass,,Not Required
+AP-03,Approval,T0049,Approver is active and exists,Approver must exist and be active,Approver=U007; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0049,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=18000.00,Pass,,Not Required
+AC-02,Access,T0050,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U008; Active=True,Pass,,Not Required
+AP-01,Approval,T0050,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0050,Maker-checker separation,Initiator and approver must be different users,Initiator=U008; Approver=U015,Pass,,Not Required
+AP-03,Approval,T0050,Approver is active and exists,Approver must exist and be active,Approver=U015; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0050,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0051,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U001; Active=True,Pass,,Not Required
+AP-01,Approval,T0051,High-value transaction approval,Amount above 50000 must have Approved status,Amount=12000.00; Status=Pending,Pass,,Not Required
+TL-01,Transaction Limit,T0051,Transaction within configured user limit,Amount must not exceed limit 75000,Amount=12000.00,Pass,,Not Required
+AC-02,Access,T0052,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U017; Active=True,Pass,,Not Required
+AP-01,Approval,T0052,High-value transaction approval,Amount above 50000 must have Approved status,Amount=18000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0052,Maker-checker separation,Initiator and approver must be different users,Initiator=U017; Approver=U011,Pass,,Not Required
+AP-03,Approval,T0052,Approver is active and exists,Approver must exist and be active,Approver=U011; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0052,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=18000.00,Pass,,Not Required
+AC-02,Access,T0053,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U020; Active=True,Pass,,Not Required
+AP-01,Approval,T0053,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0053,Maker-checker separation,Initiator and approver must be different users,Initiator=U020; Approver=U018,Pass,,Not Required
+AP-03,Approval,T0053,Approver is active and exists,Approver must exist and be active,Approver=U018; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0053,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0054,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U008; Active=True,Pass,,Not Required
+AP-01,Approval,T0054,High-value transaction approval,Amount above 50000 must have Approved status,Amount=30000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0054,Maker-checker separation,Initiator and approver must be different users,Initiator=U008; Approver=U002,Pass,,Not Required
+AP-03,Approval,T0054,Approver is active and exists,Approver must exist and be active,Approver=U002; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0054,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=30000.00,Fail,Medium,Open
+AC-02,Access,T0055,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U002; Active=True,Pass,,Not Required
+AP-01,Approval,T0055,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0055,Maker-checker separation,Initiator and approver must be different users,Initiator=U002; Approver=U013,Pass,,Not Required
+AP-03,Approval,T0055,Approver is active and exists,Approver must exist and be active,Approver=U013; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0055,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0056,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U018; Active=True,Pass,,Not Required
+AP-01,Approval,T0056,High-value transaction approval,Amount above 50000 must have Approved status,Amount=60000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0056,Maker-checker separation,Initiator and approver must be different users,Initiator=U018; Approver=U019,Pass,,Not Required
+AP-03,Approval,T0056,Approver is active and exists,Approver must exist and be active,Approver=U019; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0056,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=60000.00,Fail,Medium,Open
+AC-02,Access,T0057,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U002; Active=True,Pass,,Not Required
+AP-01,Approval,T0057,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Pending,Pass,,Not Required
+TL-01,Transaction Limit,T0057,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0058,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U003; Active=True,Pass,,Not Required
+AP-01,Approval,T0058,High-value transaction approval,Amount above 50000 must have Approved status,Amount=45000.00; Status=Pending,Pass,,Not Required
+TL-01,Transaction Limit,T0058,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=45000.00,Fail,Medium,Open
+AC-02,Access,T0059,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U015; Active=True,Pass,,Not Required
+AP-01,Approval,T0059,High-value transaction approval,Amount above 50000 must have Approved status,Amount=30000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0059,Maker-checker separation,Initiator and approver must be different users,Initiator=U015; Approver=U004,Pass,,Not Required
+AP-03,Approval,T0059,Approver is active and exists,Approver must exist and be active,Approver=U004; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0059,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=30000.00,Fail,Medium,Open
+AC-02,Access,T0060,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U002; Active=True,Pass,,Not Required
+AP-01,Approval,T0060,High-value transaction approval,Amount above 50000 must have Approved status,Amount=18000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0060,Maker-checker separation,Initiator and approver must be different users,Initiator=U002; Approver=U003,Pass,,Not Required
+AP-03,Approval,T0060,Approver is active and exists,Approver must exist and be active,Approver=U003; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0060,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=18000.00,Pass,,Not Required
+AC-02,Access,T0061,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U019; Active=True,Pass,,Not Required
+AP-01,Approval,T0061,High-value transaction approval,Amount above 50000 must have Approved status,Amount=12000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0061,Maker-checker separation,Initiator and approver must be different users,Initiator=U019; Approver=U013,Pass,,Not Required
+AP-03,Approval,T0061,Approver is active and exists,Approver must exist and be active,Approver=U013; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0061,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=12000.00,Fail,Medium,Open
+AC-02,Access,T0062,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U013; Active=True,Pass,,Not Required
+AP-01,Approval,T0062,High-value transaction approval,Amount above 50000 must have Approved status,Amount=12000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0062,Maker-checker separation,Initiator and approver must be different users,Initiator=U013; Approver=U009,Pass,,Not Required
+AP-03,Approval,T0062,Approver is active and exists,Approver must exist and be active,Approver=U009; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0062,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=12000.00,Pass,,Not Required
+AC-02,Access,T0063,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U011; Active=True,Pass,,Not Required
+AP-01,Approval,T0063,High-value transaction approval,Amount above 50000 must have Approved status,Amount=12000.00; Status=Pending,Pass,,Not Required
+TL-01,Transaction Limit,T0063,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=12000.00,Pass,,Not Required
+AC-02,Access,T0064,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U003; Active=True,Pass,,Not Required
+AP-01,Approval,T0064,High-value transaction approval,Amount above 50000 must have Approved status,Amount=18000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0064,Maker-checker separation,Initiator and approver must be different users,Initiator=U003; Approver=U001,Pass,,Not Required
+AP-03,Approval,T0064,Approver is active and exists,Approver must exist and be active,Approver=U001; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0064,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=18000.00,Pass,,Not Required
+AC-02,Access,T0065,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U004; Active=True,Pass,,Not Required
+AP-01,Approval,T0065,High-value transaction approval,Amount above 50000 must have Approved status,Amount=30000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0065,Maker-checker separation,Initiator and approver must be different users,Initiator=U004; Approver=U003,Pass,,Not Required
+AP-03,Approval,T0065,Approver is active and exists,Approver must exist and be active,Approver=U003; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0065,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=30000.00,Fail,Medium,Open
+AC-02,Access,T0066,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U010; Active=True,Pass,,Not Required
+AP-01,Approval,T0066,High-value transaction approval,Amount above 50000 must have Approved status,Amount=12000.00; Status=Pending,Pass,,Not Required
+TL-01,Transaction Limit,T0066,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=12000.00,Pass,,Not Required
+AC-02,Access,T0067,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U009; Active=True,Pass,,Not Required
+AP-01,Approval,T0067,High-value transaction approval,Amount above 50000 must have Approved status,Amount=12000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0067,Maker-checker separation,Initiator and approver must be different users,Initiator=U009; Approver=U014,Pass,,Not Required
+AP-03,Approval,T0067,Approver is active and exists,Approver must exist and be active,Approver=U014; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0067,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=12000.00,Pass,,Not Required
+AC-02,Access,T0068,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U020; Active=True,Pass,,Not Required
+AP-01,Approval,T0068,High-value transaction approval,Amount above 50000 must have Approved status,Amount=30000.00; Status=Rejected,Pass,,Not Required
+TL-01,Transaction Limit,T0068,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=30000.00,Fail,Medium,Open
+AC-02,Access,T0069,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U019; Active=True,Pass,,Not Required
+AP-01,Approval,T0069,High-value transaction approval,Amount above 50000 must have Approved status,Amount=45000.00; Status=Pending,Pass,,Not Required
+TL-01,Transaction Limit,T0069,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=45000.00,Fail,Medium,Open
+AC-02,Access,T0070,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U011; Active=True,Pass,,Not Required
+AP-01,Approval,T0070,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0070,Maker-checker separation,Initiator and approver must be different users,Initiator=U011; Approver=U004,Pass,,Not Required
+AP-03,Approval,T0070,Approver is active and exists,Approver must exist and be active,Approver=U004; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0070,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0071,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U004; Active=True,Pass,,Not Required
+AP-01,Approval,T0071,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0071,Maker-checker separation,Initiator and approver must be different users,Initiator=U004; Approver=U020,Pass,,Not Required
+AP-03,Approval,T0071,Approver is active and exists,Approver must exist and be active,Approver=U020; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0071,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0072,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U008; Active=True,Pass,,Not Required
+AP-01,Approval,T0072,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0072,Maker-checker separation,Initiator and approver must be different users,Initiator=U008; Approver=U013,Pass,,Not Required
+AP-03,Approval,T0072,Approver is active and exists,Approver must exist and be active,Approver=U013; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0072,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0073,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U010; Active=True,Pass,,Not Required
+AP-01,Approval,T0073,High-value transaction approval,Amount above 50000 must have Approved status,Amount=18000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0073,Maker-checker separation,Initiator and approver must be different users,Initiator=U010; Approver=U019,Pass,,Not Required
+AP-03,Approval,T0073,Approver is active and exists,Approver must exist and be active,Approver=U019; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0073,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=18000.00,Pass,,Not Required
+AC-02,Access,T0074,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U002; Active=True,Pass,,Not Required
+AP-01,Approval,T0074,High-value transaction approval,Amount above 50000 must have Approved status,Amount=45000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0074,Maker-checker separation,Initiator and approver must be different users,Initiator=U002; Approver=U003,Pass,,Not Required
+AP-03,Approval,T0074,Approver is active and exists,Approver must exist and be active,Approver=U003; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0074,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=45000.00,Fail,Medium,Open
+AC-02,Access,T0075,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U010; Active=True,Pass,,Not Required
+AP-01,Approval,T0075,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0075,Maker-checker separation,Initiator and approver must be different users,Initiator=U010; Approver=U002,Pass,,Not Required
+AP-03,Approval,T0075,Approver is active and exists,Approver must exist and be active,Approver=U002; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0075,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0076,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U006; Active=True,Pass,,Not Required
+AP-01,Approval,T0076,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0076,Maker-checker separation,Initiator and approver must be different users,Initiator=U006; Approver=U010,Pass,,Not Required
+AP-03,Approval,T0076,Approver is active and exists,Approver must exist and be active,Approver=U010; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0076,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0077,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U020; Active=True,Pass,,Not Required
+AP-01,Approval,T0077,High-value transaction approval,Amount above 50000 must have Approved status,Amount=30000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0077,Maker-checker separation,Initiator and approver must be different users,Initiator=U020; Approver=U016,Pass,,Not Required
+AP-03,Approval,T0077,Approver is active and exists,Approver must exist and be active,Approver=U016; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0077,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=30000.00,Fail,Medium,Open
+AC-02,Access,T0078,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U003; Active=True,Pass,,Not Required
+AP-01,Approval,T0078,High-value transaction approval,Amount above 50000 must have Approved status,Amount=30000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0078,Maker-checker separation,Initiator and approver must be different users,Initiator=U003; Approver=U006,Pass,,Not Required
+AP-03,Approval,T0078,Approver is active and exists,Approver must exist and be active,Approver=U006; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0078,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=30000.00,Fail,Medium,Open
+AC-02,Access,T0079,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U014; Active=True,Pass,,Not Required
+AP-01,Approval,T0079,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0079,Maker-checker separation,Initiator and approver must be different users,Initiator=U014; Approver=U020,Pass,,Not Required
+AP-03,Approval,T0079,Approver is active and exists,Approver must exist and be active,Approver=U020; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0079,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0080,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U002; Active=True,Pass,,Not Required
+AP-01,Approval,T0080,High-value transaction approval,Amount above 50000 must have Approved status,Amount=12000.00; Status=Pending,Pass,,Not Required
+TL-01,Transaction Limit,T0080,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=12000.00,Pass,,Not Required
+AC-02,Access,T0081,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U002; Active=True,Pass,,Not Required
+AP-01,Approval,T0081,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0081,Maker-checker separation,Initiator and approver must be different users,Initiator=U002; Approver=U014,Pass,,Not Required
+AP-03,Approval,T0081,Approver is active and exists,Approver must exist and be active,Approver=U014; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0081,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0082,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U004; Active=True,Pass,,Not Required
+AP-01,Approval,T0082,High-value transaction approval,Amount above 50000 must have Approved status,Amount=60000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0082,Maker-checker separation,Initiator and approver must be different users,Initiator=U004; Approver=U014,Pass,,Not Required
+AP-03,Approval,T0082,Approver is active and exists,Approver must exist and be active,Approver=U014; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0082,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=60000.00,Fail,Medium,Open
+AC-02,Access,T0083,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U016; Active=True,Pass,,Not Required
+AP-01,Approval,T0083,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Pending,Pass,,Not Required
+TL-01,Transaction Limit,T0083,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0084,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U007; Active=True,Pass,,Not Required
+AP-01,Approval,T0084,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0084,Maker-checker separation,Initiator and approver must be different users,Initiator=U007; Approver=U016,Pass,,Not Required
+AP-03,Approval,T0084,Approver is active and exists,Approver must exist and be active,Approver=U016; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0084,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0085,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U013; Active=True,Pass,,Not Required
+AP-01,Approval,T0085,High-value transaction approval,Amount above 50000 must have Approved status,Amount=60000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0085,Maker-checker separation,Initiator and approver must be different users,Initiator=U013; Approver=U016,Pass,,Not Required
+AP-03,Approval,T0085,Approver is active and exists,Approver must exist and be active,Approver=U016; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0085,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=60000.00,Fail,Medium,Open
+AC-02,Access,T0086,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U009; Active=True,Pass,,Not Required
+AP-01,Approval,T0086,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0086,Maker-checker separation,Initiator and approver must be different users,Initiator=U009; Approver=U010,Pass,,Not Required
+AP-03,Approval,T0086,Approver is active and exists,Approver must exist and be active,Approver=U010; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0086,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0087,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U004; Active=True,Pass,,Not Required
+AP-01,Approval,T0087,High-value transaction approval,Amount above 50000 must have Approved status,Amount=60000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0087,Maker-checker separation,Initiator and approver must be different users,Initiator=U004; Approver=U015,Pass,,Not Required
+AP-03,Approval,T0087,Approver is active and exists,Approver must exist and be active,Approver=U015; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0087,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=60000.00,Fail,Medium,Open
+AC-02,Access,T0088,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U018; Active=True,Pass,,Not Required
+AP-01,Approval,T0088,High-value transaction approval,Amount above 50000 must have Approved status,Amount=5000.00; Status=Pending,Pass,,Not Required
+TL-01,Transaction Limit,T0088,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=5000.00,Pass,,Not Required
+AC-02,Access,T0089,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U017; Active=True,Pass,,Not Required
+AP-01,Approval,T0089,High-value transaction approval,Amount above 50000 must have Approved status,Amount=12000.00; Status=Pending,Pass,,Not Required
+TL-01,Transaction Limit,T0089,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=12000.00,Pass,,Not Required
+AC-02,Access,T0090,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U009; Active=True,Pass,,Not Required
+AP-01,Approval,T0090,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0090,Maker-checker separation,Initiator and approver must be different users,Initiator=U009; Approver=U009,Fail,High,Open
+AP-03,Approval,T0090,Approver is active and exists,Approver must exist and be active,Approver=U009; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0090,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0091,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U015; Active=True,Pass,,Not Required
+AP-01,Approval,T0091,High-value transaction approval,Amount above 50000 must have Approved status,Amount=12000.00; Status=Pending,Pass,,Not Required
+TL-01,Transaction Limit,T0091,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=12000.00,Fail,Medium,Open
+AC-02,Access,T0092,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U010; Active=True,Pass,,Not Required
+AP-01,Approval,T0092,High-value transaction approval,Amount above 50000 must have Approved status,Amount=45000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0092,Maker-checker separation,Initiator and approver must be different users,Initiator=U010; Approver=U014,Pass,,Not Required
+AP-03,Approval,T0092,Approver is active and exists,Approver must exist and be active,Approver=U014; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0092,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=45000.00,Pass,,Not Required
+AC-02,Access,T0093,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U020; Active=True,Pass,,Not Required
+AP-01,Approval,T0093,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0093,Maker-checker separation,Initiator and approver must be different users,Initiator=U020; Approver=U013,Pass,,Not Required
+AP-03,Approval,T0093,Approver is active and exists,Approver must exist and be active,Approver=U013; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0093,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0094,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U010; Active=True,Pass,,Not Required
+AP-01,Approval,T0094,High-value transaction approval,Amount above 50000 must have Approved status,Amount=30000.00; Status=Rejected,Pass,,Not Required
+TL-01,Transaction Limit,T0094,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=30000.00,Pass,,Not Required
+AC-02,Access,T0095,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U010; Active=True,Pass,,Not Required
+AP-01,Approval,T0095,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0095,Maker-checker separation,Initiator and approver must be different users,Initiator=U010; Approver=U002,Pass,,Not Required
+AP-03,Approval,T0095,Approver is active and exists,Approver must exist and be active,Approver=U002; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0095,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0096,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U014; Active=True,Pass,,Not Required
+AP-01,Approval,T0096,High-value transaction approval,Amount above 50000 must have Approved status,Amount=18000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0096,Maker-checker separation,Initiator and approver must be different users,Initiator=U014; Approver=U013,Pass,,Not Required
+AP-03,Approval,T0096,Approver is active and exists,Approver must exist and be active,Approver=U013; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0096,Transaction within configured user limit,Amount must not exceed limit 50000,Amount=18000.00,Pass,,Not Required
+AC-02,Access,T0097,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U019; Active=True,Pass,,Not Required
+AP-01,Approval,T0097,High-value transaction approval,Amount above 50000 must have Approved status,Amount=18000.00; Status=Pending,Pass,,Not Required
+TL-01,Transaction Limit,T0097,Transaction within configured user limit,Amount must not exceed limit 10000,Amount=18000.00,Fail,Medium,Open
+AC-02,Access,T0098,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U008; Active=True,Pass,,Not Required
+AP-01,Approval,T0098,High-value transaction approval,Amount above 50000 must have Approved status,Amount=2500.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0098,Maker-checker separation,Initiator and approver must be different users,Initiator=U008; Approver=U010,Pass,,Not Required
+AP-03,Approval,T0098,Approver is active and exists,Approver must exist and be active,Approver=U010; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0098,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=2500.00,Pass,,Not Required
+AC-02,Access,T0099,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U001; Active=True,Pass,,Not Required
+AP-01,Approval,T0099,High-value transaction approval,Amount above 50000 must have Approved status,Amount=60000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0099,Maker-checker separation,Initiator and approver must be different users,Initiator=U001; Approver=U019,Pass,,Not Required
+AP-03,Approval,T0099,Approver is active and exists,Approver must exist and be active,Approver=U019; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0099,Transaction within configured user limit,Amount must not exceed limit 75000,Amount=60000.00,Pass,,Not Required
+AC-02,Access,T0100,Transaction initiated by inactive or unknown user,Initiator must exist and be active,Initiator=U008; Active=True,Pass,,Not Required
+AP-01,Approval,T0100,High-value transaction approval,Amount above 50000 must have Approved status,Amount=18000.00; Status=Approved,Pass,,Not Required
+AP-02,Approval,T0100,Maker-checker separation,Initiator and approver must be different users,Initiator=U008; Approver=U014,Pass,,Not Required
+AP-03,Approval,T0100,Approver is active and exists,Approver must exist and be active,Approver=U014; Active=True,Pass,,Not Required
+TL-01,Transaction Limit,T0100,Transaction within configured user limit,Amount must not exceed limit 25000,Amount=18000.00,Pass,,Not Required
+CF-01,Configuration,session_timeout_minutes,Actual setting matches expected baseline,Expected=15,Actual=15,Pass,,Not Required
+CF-01,Configuration,max_login_attempts,Actual setting matches expected baseline,Expected=5,Actual=10,Fail,High,Open
+CF-01,Configuration,mfa_required_for_admin,Actual setting matches expected baseline,Expected=Yes,Actual=No,Fail,High,Open
+CF-01,Configuration,audit_logging_enabled,Actual setting matches expected baseline,Expected=Yes,Actual=Yes,Pass,,Not Required
+CF-01,Configuration,password_min_length,Actual setting matches expected baseline,Expected=12,Actual=8,Fail,High,Open
+CF-02,Configuration,session_timeout_minutes,Actual setting exists in expected baseline,Setting must be documented in baseline,Actual=15; Baseline exists=True,Pass,,Not Required
+CF-02,Configuration,max_login_attempts,Actual setting exists in expected baseline,Setting must be documented in baseline,Actual=10; Baseline exists=True,Pass,,Not Required
+CF-02,Configuration,mfa_required_for_admin,Actual setting exists in expected baseline,Setting must be documented in baseline,Actual=No; Baseline exists=True,Pass,,Not Required
+CF-02,Configuration,audit_logging_enabled,Actual setting exists in expected baseline,Setting must be documented in baseline,Actual=Yes; Baseline exists=True,Pass,,Not Required
+CF-02,Configuration,password_min_length,Actual setting exists in expected baseline,Setting must be documented in baseline,Actual=8; Baseline exists=True,Pass,,Not Required

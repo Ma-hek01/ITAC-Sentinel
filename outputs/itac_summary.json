@@ -1,0 +1,38 @@
+{
+  "users_in_scope": 20,
+  "transactions_in_scope": 100,
+  "configuration_settings_in_baseline": 5,
+  "total_test_instances": 482,
+  "passed_tests": 434,
+  "failed_tests": 48,
+  "high_risk_exceptions": 13,
+  "medium_risk_exceptions": 35,
+  "low_risk_exceptions": 0,
+  "remediation_open": 48,
+  "control_area_results": {
+    "Access": {
+      "passed": 117,
+      "failed": 3,
+      "applicable_tests": 120,
+      "pass_rate_percent": 97.5
+    },
+    "Approval": {
+      "passed": 245,
+      "failed": 7,
+      "applicable_tests": 252,
+      "pass_rate_percent": 97.22
+    },
+    "Configuration": {
+      "passed": 7,
+      "failed": 3,
+      "applicable_tests": 10,
+      "pass_rate_percent": 70.0
+    },
+    "Transaction Limit": {
+      "passed": 65,
+      "failed": 35,
+      "applicable_tests": 100,
+      "pass_rate_percent": 65.0
+    }
+  }
+}

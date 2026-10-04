@@ -1,0 +1,6 @@
+setting_name,expected_value
+session_timeout_minutes,15
+max_login_attempts,5
+mfa_required_for_admin,Yes
+audit_logging_enabled,Yes
+password_min_length,12
